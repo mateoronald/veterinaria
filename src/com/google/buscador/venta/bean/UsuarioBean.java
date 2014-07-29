@@ -1,7 +1,7 @@
 package com.google.buscador.venta.bean;
 
 public class UsuarioBean {
-
+/*comentario demo */
 	private int intCodigo;
 	private String strLogin;
 	private String strPassword;
