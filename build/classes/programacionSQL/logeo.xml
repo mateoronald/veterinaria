@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="logeoSQL">
+
+	<resultMap type="opcionBean" id="mapOpcionBean">
+		<result column="cod_opc" property="intCodigo" />
+		<result column="des_opc" property="strDescripcion" />
+		<result column="par_opc" property="strParametor" />
+	</resultMap>
+
+	<select id="SelectOpcionLogeo" resultMap="mapOpcionBean"
+		parameterType="int">
+		select
+		o.cod_opc as cod_opc,
+		o.des_opc as des_opc,
+		o.par_opc as par_opc
+		from perfil p inner join detalle_opcion d on p.cod_perf = d.cod_perf
+		inner join opciones o on o.cod_opc=d.cod_opc where p.cod_perf = #{intPerfil};
+	</select>
+	
+	
+	<resultMap type="usuarioBean" id="mapUsuarioBean">
+		<result column="cod_usu" property="intCodigo" />
+		<result column="log_usu" property="strLogin" />
+		<result column="pas_usu" property="strPassword" />
+		<result column="nom_usu" property="strNombre" />
+		<result column="ape_pat_usu" property="strApePaterno" />
+		<result column="ape_mat_usu" property="strApeMaterno" />
+		<result column="dni_usu" property="strDNI" />
+		<result column="eda_usu" property="intEdad" />
+		<result column="fec_nac_usu" property="strFeNacimiento" />
+		<result column="cod_perf" property="intPerfil" />
+		<result column="estado" property="estado" />
+	</resultMap>
+
+	<select id="SelectUsuarioLogeo" resultMap="mapUsuarioBean"
+		parameterType="com.google.buscador.venta.bean.UsuarioBean">
+		select * from usuario where log_usu = #{strLogin} and
+		pas_usu = #{strPassword}
+	</select>
+
+	
+	
+</mapper>
