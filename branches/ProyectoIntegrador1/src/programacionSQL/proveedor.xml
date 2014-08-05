@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="proveedorSQL">
+
+
+
+    
+
+
+		<select id="SQL_traeTodosProveedor" resultType="com.google.buscador.venta.bean.ProveedorBean"
+		parameterType="com.google.buscador.venta.bean.ProveedorBean" >
+		
+		SELECT 
+				IDPROVEEDOR as idProveedor,
+				PRO_RAZONSOCIAL as strRazonSocial,
+				PRO_RUC as strRuc,
+				PRO_DIRECCION as strDireccion,
+				PRO_TELEFONO as strTelefono,
+				PRO_EMAIL as strEmail,
+				IDCATEGORIA as strCategoria,
+				IDDISTRITO as strDistrito
+		FROM 
+			PROVEEDOR
+	
+		</select>
+		
+			<select id="SQL_eliminaProveedor"  parameterType="int" >
+		DELETE FROM PROVEEDOR WHERE IDPROVEEDOR =  #{id}
+	</select>
+	
+	<select id="SQL_insertaProveedor"	parameterType="proveedorBeanIbatis" >
+		INSERT INTO PROVEEDOR VALUES(null, 
+				#{strRazonSocial},
+				#{strRuc},
+				#{strDireccion},
+				#{strTelefono},
+				#{strEmail},
+				#{strCategoria},
+				#{strDistrito}
+				)
+	</select>
+	
+	<select id="SQL_buscaProveedor" parameterType="int" resultType="proveedorBeanIbatis">
+		SELECT 
+				IDPROVEEDOR as idProveedor,
+				PRO_RAZONSOCIAL as strRazonSocial,
+				PRO_RUC as strRuc,
+				PRO_DIRECCION as strDireccion,
+				PRO_TELEFONO as strTelefono,
+				PRO_EMAIL as strEmail,
+				IDCATEGORIA as strCategoria,
+				IDDISTRITO as strDistrito
+		FROM 
+			PROVEEDOR
+		WHERE 
+			IDPROVEEDOR =  #{id}
+	</select>
+	
+	<select id="SQL_actualizaProveedor" resultType="proveedorBeanIbatis" >
+			UPDATE 
+				PROVEEDOR 
+			SET  
+						
+		PRO_RAZONSOCIAL	=	#{strRazonSocial},
+		PRO_RUC			=	#{strRuc},
+		PRO_DIRECCION	=	#{strDireccion},
+		PRO_TELEFONO	=	#{strTelefono},
+		PRO_EMAIL		=	#{strEmail},
+		IDCATEGORIA		=	#{strCategoria},
+		IDDISTRITO		=	#{strDistrito}
+				
+			WHERE 
+				IDPROVEEDOR = #{idProveedor}
+	</select>
+	
+
+	
+</mapper>

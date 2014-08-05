@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="logeoSQL">
+
+	<select id="SelectOpcionLogeo" resultType="com.google.buscador.venta.bean.OpcionBean"
+		parameterType="int">
+		SELECT
+			O.codigo AS intCodigo,
+			O.descripcion AS strDescripcion,
+			O.parametro AS strParametor
+		FROM
+			usuario AS U
+		INNER JOIN opciones_usuario AS OU ON OU.codigoUsu = U.codigo
+		INNER JOIN opciones AS O ON OU.codigoOpc = O.codigo
+		WHERE
+			OU.codigoUsu = #{codigoUsuario}
+	</select>
+	
+	<select id="SelectUsuarioLogeo" resultType="com.google.buscador.venta.bean.UsuarioBean"
+		parameterType="com.google.buscador.venta.bean.UsuarioBean">
+		SELECT
+			u.codigo AS intCodigo,
+			u.login AS strLogin,
+			u. PASSWORD AS strPassword,
+			u.apeMaterno AS strApeMaterno,
+			u.apePaterno AS strApePaterno,
+			u.DNI AS strDNI,
+			u.fechaNacimiento AS strFeNacimiento,
+			u.estado AS estado,
+			u.nombre AS strNombre
+		FROM
+			usuario u
+		WHERE
+			u. PASSWORD = #{strPassword} AND
+			u.login = #{strLogin} AND
+			u.estado = 0
+	</select>
+
+</mapper>

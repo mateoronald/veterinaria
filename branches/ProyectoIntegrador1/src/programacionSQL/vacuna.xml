@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="vacunaSQL">
+
+	<select id="vacunaslist" parameterType="com.google.buscador.venta.bean.VacunaBean"
+	    resultType="com.google.buscador.venta.bean.VacunaBean">
+		SELECT
+			dm.idMascota AS idMascota,
+			v.idVacuna AS idVacuna,
+			v.vacuna AS vacuna,
+			dm.fecha AS fecha,
+			v.estado AS estado
+		FROM
+			Vacuna AS v
+		LEFT JOIN detalleMascota AS dm ON dm.idVacuna = v.idVacuna
+		WHERE
+			dm.idMascota = #{idMascota}  or  #{idMascota}  is null AND  
+			dm.idVacuna = #{idVacuna} or #{idVacuna} is null AND
+			dm.fecha = #{fecha}  or #{fecha} is null AND
+			v.vacuna = #{vacuna} or #{vacuna} is null AND
+			v.estado =  #{vacuna}  or #{vacuna}  is null
+	</select>
+	
+</mapper>

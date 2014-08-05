@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="localSQL">
+
+	
+	
+	<select id="selectLocal" resultType="com.google.buscador.venta.bean.Local"
+		parameterType="com.google.buscador.venta.bean.Local">
+		SELECT
+			L.idLocal AS idLocal,
+			L.descripcion AS descripcion
+		FROM
+			Local AS L
+		WHERE
+			L.idLocal = #{idLocal}
+		OR  #{idLocal} IS NULL
+		AND #{descripcion} IS NULL
+		OR L.descripcion LIKE concat('%',#{descripcion})
+	</select>
+
+</mapper>

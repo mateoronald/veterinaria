@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="citaSQL">
+
+	<select id="registarCita" parameterType="com.google.buscador.venta.bean.Local">
+		INSERT INTO Citas (
+				idCitas,
+				idCliente,
+				idLocal,
+				fechaCita,
+				estado
+			)
+		VALUES
+			(
+				#{idCita},
+				#{idCliente},
+				#{idLocal},
+				#{fechaCita},
+				0
+			);
+	</select>
+	
+
+	
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+    
+	<package name="dawi" namespace="/"
+		extends="struts-default,json-default,tiles-default">
+
+		<action name="a_login">
+			<result type="tiles">t_login</result>
+		</action>
+		
+		<action name="a_principal">
+			<result type="tiles">t_principal</result>
+		</action>
+		
+		<action name="a_informe">
+			<result type="tiles">t_informe</result>
+		</action>
+		
+		<action name="a_perfil">
+			<result type="tiles">t_perfil</result>
+		</action>
+	
+		<action name="a_fortalezas">
+			<result type="tiles">t_fortalezas</result>
+		</action>
+		
+		<action name="a_presentacion">
+			<result type="tiles">t_presentacion</result>
+		</action>
+		
+		<action name="a_misionyvision">
+			<result type="tiles">t_misionyvision</result>
+		</action>
+		
+		<action name="a_servicios">
+			<result type="tiles">t_servicios</result>
+		</action>
+		
+		
+		<action name="a_registroMascotas">
+			<result type="tiles">t_registroMascotas</result>
+		</action>
+		
+		<action name="a_registroClientes">
+			<result type="tiles">t_registroClientes</result>
+		</action>
+		
+		<action name="a_registroCitas">
+			<result type="tiles">t_registroCitas</result>
+		</action>
+		
+		<action name="a_bandejaCitas">
+			<result type="tiles">t_bandejaCitas</result>
+		</action>
+		
+		<action name="a_regsitroDoctores">
+			<result type="tiles">t_registroDoctores</result>
+		</action>
+		
+		<action name="a_regsitroAsistentes">
+			<result type="tiles">t_registroAsistentes</result>
+		</action>
+		
+		<action name="a_derivacionPersonal">
+			<result type="tiles">t_derivacionPersonal</result>
+		</action>
+		
+		<action name="a_registroAtencion">
+			<result type="tiles">t_registroAtencion</result>
+		</action>
+		
+		<action name="a_recetaMedica">
+			<result type="tiles">t_recetaMedica</result>
+		</action>
+		
+		<action name="a_comprobantePago">
+			<result type="tiles">t_comprobantePago</result>
+		</action>	
+			
+			
+			<action name="a_mantenimientoProveedor">
+			<result type="tiles">t_mantenimientoProveedor</result>
+		</action>
+		
+			
+	
+	</package>
+
+</struts>
