@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+	<!-- Definimos las plantillas de la aplicacion -->
+	<definition name="t_principal" template="/templates/principal.jsp">
+		<put-attribute name="cabecera" value="/templates/cabeza.jsp" />
+		<put-attribute name="opciones" value="/templates/opciones.jsp" />
+		<put-attribute name="pie" value="/templates/pie.jsp" />
+		<put-attribute name="central" value="/templates/central.jsp" />
+		
+	</definition>
+
+	<definition name="t_login" template="/templates/login.jsp">
+		<put-attribute name="cabecera" value="/templates/cabeza.jsp" />
+		<put-attribute name="pie" value="/templates/pie.jsp" />
+	</definition>
+	
+	<definition name="t_informe" template="/templates/informe.jsp">
+		<put-attribute name="cabecera" value="/templates/cabeza.jsp" />
+		<put-attribute name="pie" value="/templates/pie.jsp" />
+	</definition>
+
+	<!-- Fin de las plantilla -->
+
+	<!-- Definimos los JSP que consumen las plantillas -->
+	<definition name="t_perfil" extends="t_principal">
+		<put-attribute name="central" value="/pages/perfil.jsp" />
+	</definition>
+	
+
+	<!-- informe -->
+	<definition name="t_fortalezas" extends="t_informe">
+		<put-attribute name="central" value="/pages/informacion/fortalezas.jsp" />
+	</definition>
+	
+	<definition name="t_misionyvision" extends="t_informe">
+		<put-attribute name="central" value="/pages/informacion/misionyvision.jsp" />
+	</definition>
+	
+	<definition name="t_presentacion" extends="t_informe">
+		<put-attribute name="central" value="/pages/informacion/presentacion.jsp" />
+	</definition>
+	
+	<definition name="t_servicios" extends="t_informe">
+		<put-attribute name="central" value="/pages/informacion/servicios.jsp" />
+	</definition>
+	
+	<!-- jsp ecus  -->
+	
+	<definition name="t_registroMascotas" extends="t_principal">
+		<put-attribute name="central" value="/pages/RegistroMascotas.jsp" />
+	</definition>
+	
+	<definition name="t_registroClientes" extends="t_principal">
+		<put-attribute name="central" value="/pages/RegistroClientes.jsp" />
+	</definition>
+	
+	<definition name="t_registroCitas" extends="t_principal">
+		<put-attribute name="central" value="/pages/RegistroCitas.jsp"/>
+	</definition>
+	
+	<definition name="t_bandejaCitas" extends="t_principal">
+		<put-attribute name="central" value="/pages/bandejaCitas.jsp"/>
+	</definition>	
+	
+	<definition name="t_registroDoctores" extends="t_principal">
+		<put-attribute name="" value=""></put-attribute>
+	</definition>
+	
+	<definition name="t_registroAsistentes" extends="t_principal">
+		<put-attribute name="" value=""></put-attribute>
+	</definition>
+	
+	<definition name="t_derivacionPersonal" extends="t_principal">
+		<put-attribute name="" value=""></put-attribute>
+	</definition>
+	
+	<definition name="t_registroAtencion" extends="t_principal">
+		<put-attribute name="" value=""></put-attribute>
+	</definition>
+	
+	<definition name="t_recetaMedica" extends="t_principal">
+		<put-attribute name="" value=""></put-attribute>
+	</definition>
+	
+	<definition name="t_comprobantePago" extends="t_principal">
+		<put-attribute name="" value=""></put-attribute>
+	</definition> 
+	
+</tiles-definitions>
+
+
+
+
+
+
+
+
+

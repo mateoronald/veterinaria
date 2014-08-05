@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="clienteSQL">
+
+	<select id="getByIdCliente" parameterType="com.google.buscador.venta.bean.Cliente"
+	    resultType="com.google.buscador.venta.bean.Cliente">
+		SELECT
+			U.codigo as intCodigo,
+			U.login	as strLogin,
+			U.password as strPassword,
+			U.apeMaterno as strApeMaterno,
+			U.apePaterno as strApePaterno,
+			U.DNI as strDNI,
+			U.fechaNacimiento as strFeNacimiento,
+			U.estado as estado,
+			U.nombre as strNombre,
+			C.telefono as telefono,
+			C.nombreOtroDuenio as nombreOtroDuenio,
+			C.distrito as distrito,
+			C.celular as celular,
+			C.email as email,
+			C.numeroAlternativo as numeroAlternativo
+		FROM
+			usuario AS U
+			INNER JOIN cliente AS C ON C.codigo = U.codigo
+		WHERE
+			U.DNI = #{strDNI}
+	</select>
+	
+</mapper>
