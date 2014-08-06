@@ -119,7 +119,7 @@ public class ProveedorMantenimientoAction extends ActionSupport {
 	public String eliminaProveedor() throws Exception {
 		log.info("En eliminaProveedor");
 		
-		grdProveedor =(ArrayList<ProveedorBean>)session.get("keyVendedor");
+		grdProveedor =(ArrayList<ProveedorBean>)session.get("keyProveedor");
 		
 		if(grdProveedor== null ||  grdProveedor.size()==0){
 			mensaje="Se debería haber realizado una selección";

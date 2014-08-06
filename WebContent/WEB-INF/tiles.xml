@@ -91,6 +91,18 @@
 		<put-attribute name="" value=""></put-attribute>
 	</definition> 
 	
+	
+		<!-- Tiles de mantenimiento Vendedor -->
+ 	<definition name="t_mantenimientoProveedor" extends="t_principal">
+		<put-attribute name="central" value="/pages/proveedorMantenimiento.jsp"/>
+	</definition>
+ 	<definition name="t_mantenimientoProveedorGrid" extends="t_principal">
+		<put-attribute name="central" value="/pages/proveedorMantenimientoGrid.jsp"/>
+	</definition>
+	
+	
+	
+	
 </tiles-definitions>
 
 
