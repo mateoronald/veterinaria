@@ -46,7 +46,7 @@
 <div id="idDivMantProveedor" align="left">
 
 <div id="idDivMensajeForm02" align="left"></div> 
-
+ 
 
 <h3>Mantenimiento Proveedores</h3>
 	<s:form id="idForm" >
